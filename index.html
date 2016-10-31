@@ -22,7 +22,7 @@
       <h3>
 <a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Introducción al Problema</h3>
 
-<p>Hoy en día se ha vuelto más común ver cadenas de restaurantes que ofrecen el servicio de comida a domicilio. Empresas tales como <a href="http://www.dominospizza.es/">Dominos</a> tienen una forma de pedido donde puedes seleccionar una tienda que está cerca y hacer tu pedido desde tu casa. Estas empresas han invertido dinero para hacer una aplicación propria que permite que el usuario pueda pedir desde el móvil. El problema es que puede ser que las empresas start up no tiene el dinero suficiente para emplear un equipo de desarrolladores para crear una aplicación así. Sería bueno si fuera un sistema disponible para poder hacer esto. Tal sistema tendría una aplicación que sería el punto de venta que enviaría el pedido a un API el cual redireccionaría el pedido al restaurante más cercano depende de la ubicación del usuario.</p>
+<p>Hoy en día se ha vuelto más común ver cadenas de restaurantes que ofrecen el servicio de comida a domicilio. Empresas tales como <a href="http://www.dominospizza.es/">Dominos</a> tienen una forma de pedido donde puedes seleccionar una tienda que está cerca y hacer tu pedido desde tu casa. Estas empresas han invertido dinero para hacer una aplicación propria que permite que el usuario pueda pedir desde el móvil. El problema es que puede ser que las empresas start up no tengan el dinero suficiente para emplear a un equipo de desarrolladores para crear una aplicación así. Sería bueno si fuera un sistema disponible para poder hacer esto. Tal sistema tendría una aplicación que sería el punto de venta que enviaría el pedido a un API el cual redireccionaría el pedido al restaurante más cercano depende de la ubicación del usuario.</p>
 
 <h3>Solución</h3>
 <p>Mi solución es crear una aplicación móvil que usa un punto de venta para hacer el pedido. La aplicación enviará el pedido junto con la ubicación a un API en la nube. Este API comunicará con varios micro servicios para encontrar el restaurante más cercano a la ubicación del usuario. Uno de los servicios sería el Location Manager el cual devolverá el restaurante más conveniente para hacer el pedido. Luego el API enviará el pedido al restaurante escodigo el devolver el response al usuario. Abajo hay un diagrama ilustrando la idea.</p>
@@ -33,5 +33,12 @@
 
 <p>Esto enseña el sistema básico. Para partirlo en más microservicios, se podría hacer un micosrvicio para verificar cuales son los restaurantes que están abiertos actualmente o tal vez un microservicio para verificar que todas las cosas en el pedido están en stock.</p>
 
+
+<h3>La Arquitectura</h3>
+<h4>Aplicación Del Usuario</h4>
+<p>Se podría usar varias tecnologías para crear la aplicación y el punto de venta pero a efectos de este proyecto usaré el <a href="https://developer.android.com/studio/index.html?hl=es-419">Android SDK</a> para comunicar con el API que estará desplegado en la nube. Usaré Android porque me daré la oportunidad de trabajar con el API lo cual he querido hacer por mucho tiempo.</p>
+<p>La aplicación usará el API para enviar el pedido ademñas de reuperar los datos más actuales del menú.</p>
+
+<h4>Restful API</h4>
   </body>
 </html>
