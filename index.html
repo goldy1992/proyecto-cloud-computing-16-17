@@ -42,5 +42,14 @@
 <h4>Restful API</h4>
 <p>Casi cualquier lenguaje de programación (dentro de los límites de lo razonable) tiene la funcionalidad de poder crear un API Restful. Sería fácil para mi crear el API using Java Spring desde que llevo un año trabajando con esa marca de trabajo. Sin embargo me gustaría experimentar con el Node js desde que estos días está muy de moda.</p>
 
+<h4>Menu Service</h4>
+<p>El menú del restaurante se guardará en un microservicio a que la aplicación usuario y los sistemas de cada restaurante contactarán. El API the este servicio permitirá que los usuarios administrativos puedan cambiar los itemes en el menú. El menú mismo se guardará en un base de datos. Para simplificar todo, usaré el <a href="https://www.mongodb.com/">MongoDB</a> porque tiene una forma con que es muy fácil interactuar y no hace falta que uses SQL.</p>
+
+<h4>Sistema de Restaurante</h4>
+<p>El sistema de cada restaurante será lo mismo pero desplegado en la nube independientemente de los demás con su propia base de datos. El API del sistema tendrá la responsibilidad de pasar los pedidos para que el sistema las pueda procesar, y devolver los resultados al API REST principal. El sistema conectará a una base de datos que guardará el menú, recuperado del Menu Service, y el total de cada item. </p>
+
+<h4>Location Service</h4>
+<p>Este servicio tendrá una base de datos que guardará la dirección IP de cada restaurante de la empresa junta con su ubicación. El servicio usará la ubicación del usuario, dado por el API REST, para encontrar el restaurante más cercano y devolver la dirección IP del restaurante óptimo. La base de datos será muy simple así que se puede usar el <a href="https://www.mongodb.com/">MongoDB</a> y para calcular el restaurante más óptimo, pasará las ubicaciones al <a href="https://developers.google.com/maps/?hl=es-419">Google Maps API</a> el cual devolvará el resultado. </p>
+
   </body>
 </html>
