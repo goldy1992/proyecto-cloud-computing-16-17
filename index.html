@@ -19,7 +19,7 @@
     </section>
 
     <section class="main-content">
-      <h3>
+      <h3 id="intro">
 <a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Introducción al Problema</h3>
 
 <p>Hoy en día se ha vuelto más común ver cadenas de restaurantes que ofrecen el servicio de comida a domicilio. Empresas tales como <a href="http://www.dominospizza.es/">Dominos</a> tienen una forma de pedido donde puedes seleccionar una tienda que está cerca y hacer tu pedido desde tu casa. Estas empresas han invertido dinero para hacer una aplicación propria que permite que el usuario pueda pedir desde el móvil. El problema es que puede ser que las empresas start up no tengan el dinero suficiente para emplear a un equipo de desarrolladores para crear una aplicación así. Sería bueno si fuera un sistema disponible para poder hacer esto. Tal sistema tendría una aplicación que sería el punto de venta que enviaría el pedido a un API el cual redireccionaría el pedido al restaurante más cercano depende de la ubicación del usuario.</p>
@@ -51,5 +51,7 @@
 <h4>Location Service</h4>
 <p>Este servicio tendrá una base de datos que guardará la dirección IP de cada restaurante de la empresa junta con su ubicación. El servicio usará la ubicación del usuario, dado por el API REST, para encontrar el restaurante más cercano y devolver la dirección IP del restaurante óptimo. La base de datos será muy simple así que se puede usar el <a href="https://www.mongodb.com/">MongoDB</a> y para calcular el restaurante más óptimo, pasará las ubicaciones al <a href="https://developers.google.com/maps/?hl=es-419">Google Maps API</a> el cual devolvará el resultado. </p>
 
+<h3 id="prov">Provisionamiento</h3>
+<p>Cuando deplegue mi aplicación en la nube, querré alguna forma automatica para instalar el sistema operativo y configurar. Para lograr eso usaré el software <a href="https://www.chef.io/">Chef</a> para automatizar el proceso. He elegido Chef porque se puede usar para un sistema de solo una máquina o también para sistemas de más de uno. Es más, hay un <a href="https://supermarket.chef.io/">supermercado de recetas</a> probado previamente y disponibles para usar, que instalan y configuran todo el software que quiero usar en una variedad de sistemas operativos. Eso es decir que me hará falta escribir poco código para crear mi infrastructura.</p>
   </body>
 </html>
