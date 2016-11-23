@@ -3,6 +3,7 @@
 Esta configuración comprende un entorno de Ubuntu con los siguientes software preinstalados:
 
 * Java Oracle 1.8
+* NodeJs V6.9.1
 
 
 ## Requesitos Para Ejecutar La Máquina Virtual
