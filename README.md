@@ -8,7 +8,7 @@ Hoy en día se ha vuelto más común ver cadenas de restaurantes que ofrecen el 
 Mi solución es crear una aplicación móvil que usa un punto de venta para hacer el pedido. La aplicación enviará el pedido junto con la ubicación a un API en la nube. Este API comunicará con varios micro servicios para encontrar el restaurante más cercano a la ubicación del usuario. Uno de los servicios sería el Location Manager el cual devolverá el restaurante más conveniente para hacer el pedido. Luego el API enviará el pedido al restaurante escodigo el devolver el response al usuario. Abajo hay un diagrama ilustrando la idea.
 
 
-[diagrama](diagram.jpg)
+![diagrama](diagram.jpg)
 
 Esto enseña el sistema básico. Para partirlo en más microservicios, se podría hacer un micosrvicio para verificar cuales son los restaurantes que están abiertos actualmente o tal vez un microservicio para verificar que todas las cosas en el pedido están en stock.
 
@@ -33,4 +33,4 @@ El sistema de cada restaurante será lo mismo pero desplegado en la nube indepen
 Este servicio tendrá una base de datos que guardará la dirección IP de cada restaurante de la empresa junta con su ubicación. El servicio usará la ubicación del usuario, dado por el API REST, para encontrar el restaurante más cercano y devolver la dirección IP del restaurante óptimo. La base de datos será muy simple así que se puede usar el [MongoDB](https://www.mongodb.com/) y para calcular el restaurante más óptimo, pasará las ubicaciones al [Google Maps API](https://developers.google.com/maps/?hl=es-419) el cual devolvará el resultado. 
 
 ## Provisionamiento
-Cuando deplegue mi aplicación en la nube, querré alguna forma automatica para instalar el sistema operativo y configurar. Para lograr eso usaré el software <[Chef](https://www.chef.io/) para automatizar el proceso. He elegido Chef porque se puede usar para un sistema de solo una máquina o también para sistemas de más de uno. Es más, hay un [supermercado de recetas](https://supermarket.chef.io/) probado previamente y disponibles para usar, que instalan y configuran todo el software que quiero usar en una variedad de sistemas operativos. Eso es decir que me hará falta escribir poco código para crear mi infrastructura.
+Cuando deplegue mi aplicación en la nube, querré alguna forma automatica para instalar el sistema operativo y configurar. Para lograr eso usaré el software [Chef](https://www.chef.io/) para automatizar el proceso. He elegido Chef porque se puede usar para un sistema de solo una máquina o también para sistemas de más de uno. Es más, hay un [supermercado de recetas](https://supermarket.chef.io/) probado previamente y disponibles para usar, que instalan y configuran todo el software que quiero usar en una variedad de sistemas operativos. Eso es decir que me hará falta escribir poco código para crear mi infrastructura.
